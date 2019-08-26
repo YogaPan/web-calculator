@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+}
+
+button {
+  border: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+p {
+  margin: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1c1c1c;
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
