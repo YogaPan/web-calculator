@@ -1,0 +1,53 @@
+{
+  "name": "web-calculator",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "serve": "serve -s build -p 7000",
+    "format": "prettier --write \"{scripts,src}/**/*.{js,jsx,json}\"",
+    "lint": "eslint \"{scripts,src}/**/*.{js,jsx}\"",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@galtz-library/browserslist-config": "^0.2.5",
+    "big.js": "^6.1.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.1",
+    "redux-actions": "^2.6.5",
+    "redux-logger": "^3.0.6",
+    "styled-components": "^5.3.0",
+    "web-vitals": "^2.1.0",
+    "workbox-background-sync": "^6.1.5",
+    "workbox-broadcast-update": "^6.1.5",
+    "workbox-cacheable-response": "^6.1.5",
+    "workbox-core": "^6.1.5",
+    "workbox-expiration": "^6.1.5",
+    "workbox-google-analytics": "^6.1.5",
+    "workbox-navigation-preload": "^6.1.5",
+    "workbox-precaching": "^6.1.5",
+    "workbox-range-requests": "^6.1.5",
+    "workbox-routing": "^6.1.5",
+    "workbox-strategies": "^6.1.5",
+    "workbox-streams": "^6.1.5"
+  },
+  "devDependencies": {
+    "@galtz-library/eslint-config": "^0.1.4",
+    "@galtz-library/prettier-config": "^0.1.4",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.1",
+    "eslint": "^7.32.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.1",
+    "prettier": "^2.3.2",
+    "serve": "^12.0.0"
+  }
+}

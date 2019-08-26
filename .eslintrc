@@ -1,0 +1,12 @@
+{
+  "extends": ["@galtz-library/eslint-config/lib/react"],
+  "overrides": [
+    {
+      "files": "**/*.{test,spec}.{js,jsx}",
+      "env": { "jest": true },
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
+}
