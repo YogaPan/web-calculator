@@ -95,20 +95,3 @@ https://github.com/MikeMcl/big.js/
 
 參考專案：
 [GitHub - ahfarmer/calculator: Simple calculator built with React](https://github.com/ahfarmer/calculator)
-
-### Roadmap
-
-- 重新整案架構
-- 把 pressNumber, pressOperation, calculate 三個邏輯分開
-- Add Unit Test & test scripts
-- Add Eslint
-- Add Docker Tag
-- Husky Commit Hooks
-- Add format scripts
-- Add CI/CD (Jenkins or Travis CI or Circle CI)
-- 補上演算法邏輯文件
-
-### Future
-
-- Push to Production ENV
-- Collect user Press Button Data
