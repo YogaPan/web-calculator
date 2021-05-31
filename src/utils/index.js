@@ -90,9 +90,7 @@ export default function calculate(obj, buttonName) {
     if (obj.operation && obj.next) {
       const result = operate(obj.total, obj.next, obj.operation)
       return {
-        total: Big(result)
-          .div(Big('100'))
-          .toString(),
+        total: Big(result).div(Big('100')).toString(),
         next: null,
         operation: null
       }
@@ -100,9 +98,7 @@ export default function calculate(obj, buttonName) {
     if (obj.next) {
       return {
         total: obj.total,
-        next: Big(obj.next)
-          .div(Big('100'))
-          .toString(),
+        next: Big(obj.next).div(Big('100')).toString(),
         operation: obj.operation
       }
     }

@@ -11,6 +11,7 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
+    /* eslint-disable no-console */
     console.error(
       `[Component Error] ${error.toString()}, ${errorInfo.componentStack}`
     )

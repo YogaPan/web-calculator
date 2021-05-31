@@ -6,9 +6,10 @@ import actions from '../actions'
 
 function CalcButton({ className, value }) {
   const dispatch = useDispatch()
-  const calculate = useCallback(value => dispatch(actions.calculate(value)), [
-    dispatch
-  ])
+  const calculate = useCallback(
+    value => dispatch(actions.calculate(value)),
+    [dispatch]
+  )
 
   return (
     <button
@@ -22,7 +23,7 @@ function CalcButton({ className, value }) {
 }
 
 CalcButton.propTypes = {
-  buttonName: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired
 }
 
 const StyledCalcButton = styled(CalcButton)`
