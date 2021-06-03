@@ -7,8 +7,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "format": "prettier --write \"{scripts,src}/**/*.{js,jsx,json}\"",
     "lint": "eslint \"{scripts,src}/**/*.{js,jsx}\"",
-    "format": "prettier --write \"{scripts,src}/**/*.{js,jsx,json}\""
+    "prepare": "husky install"
   },
   "dependencies": {
     "big.js": "^6.1.1",
@@ -26,6 +27,8 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-react": "^7.24.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
     "prettier": "^2.3.0"
   }
 }
