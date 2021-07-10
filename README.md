@@ -1,5 +1,7 @@
 # HW2: React Redux Calculator
 
+![workflow](https://github.com/YogaPan/web-calculator/actions/workflows/main.yml/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/131d9399-eb17-41a5-9e1d-72a6cfd5cb53/deploy-status)](https://app.netlify.com/sites/galtz-web-calculator/deploys)
+
 ![image](./docs/images/screenshot.png)
 
 ## 如何使用
