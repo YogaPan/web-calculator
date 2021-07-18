@@ -6,17 +6,13 @@ import actions from '../actions'
 
 function CalcButton({ className, value }) {
   const dispatch = useDispatch()
-  const calculate = useCallback(
-    value => dispatch(actions.calculate(value)),
-    [dispatch]
+  const handleClick = useCallback(
+    () => dispatch(actions.calculate(value)),
+    [dispatch, value]
   )
 
   return (
-    <button
-      className={className}
-      type="button"
-      onClick={() => calculate(value)}
-    >
+    <button className={className} type="button" onClick={handleClick}>
       {value}
     </button>
   )
@@ -27,6 +23,9 @@ CalcButton.propTypes = {
 }
 
 const StyledCalcButton = styled(CalcButton)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 75px;
   width: 75px;
   border-radius: 50%;
