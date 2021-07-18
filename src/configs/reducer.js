@@ -1,4 +1,3 @@
-// import { CALCULATE } from '../constants'
 import { handleActions } from 'redux-actions'
 import actions from '../actions'
 import calculate from '../utils'

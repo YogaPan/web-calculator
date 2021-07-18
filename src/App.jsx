@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import CalcButton from './components/CalcButton'
 import Display from './components/Display'
+import './styles/index.css'
 
 const AppContainer = styled.div`
   text-align: center;
