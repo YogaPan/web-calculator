@@ -1,6 +1,9 @@
 import Big from 'big.js'
 import { BUTTON } from '../constants/button'
 
+Big.DP = 6
+Big.RM = Big.roundHalfUp
+
 export const isNumber = item => /[0-9]+/.test(item)
 export const reverse = origin => -1 * parseFloat(origin).toString()
 export const div100 = num => Big(num).div(Big('100')).toString()
