@@ -1,9 +1,9 @@
 import { handleActions } from 'redux-actions'
-import actions from '../actions'
 import { BUTTON } from '../constants/button'
 import { div100, isNumber, operate, reverse } from '../utils'
+import actions from './actions'
 
-const initialState = {
+export const initialState = {
   total: null,
   next: null,
   operation: null

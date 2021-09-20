@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
-import actions from '../actions'
+import actions from '../configs/actions'
 
 function CalcButton({ className, value }) {
   const dispatch = useDispatch()
