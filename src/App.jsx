@@ -48,8 +48,7 @@ const App = () => {
         <CalcButton.Operation value={BUTTON.ADD} />
       </CalcButton.Row>
       <CalcButton.Row>
-        <CalcButton value="0" />
-        <CalcButton value={BUTTON.DOT} />
+        <CalcButton.Zero value="0" />
         <CalcButton value={BUTTON.DOT} />
         <CalcButton.Operation value={BUTTON.EQ} />
       </CalcButton.Row>

@@ -28,7 +28,7 @@ const StyledCalcButton = styled(CalcButton)`
   justify-content: center;
   height: 75px;
   width: 75px;
-  border-radius: 50%;
+  border-radius: 37.5px;
   margin: 10px;
   background: #1c1c1c;
   font-size: 35px;
@@ -54,6 +54,13 @@ StyledCalcButton.Functional = styled(StyledCalcButton)`
     background-color: #1c1c1c;
   }
 `
+
+StyledCalcButton.Zero = styled(StyledCalcButton)`
+  width: 170px;
+  justify-content: flex-start;
+  padding-left: 30px;
+`
+
 StyledCalcButton.Row = styled.div`
   display: flex;
   align-content: center;
