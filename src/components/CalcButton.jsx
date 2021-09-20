@@ -41,7 +41,7 @@ const StyledCalcButton = styled(CalcButton)`
   }
 `
 
-StyledCalcButton.Operator = styled(StyledCalcButton)`
+StyledCalcButton.Operation = styled(StyledCalcButton)`
   color: #fff;
   background-color: #ff9500;
 `

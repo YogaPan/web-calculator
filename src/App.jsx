@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import React from 'react'
 import styled from 'styled-components'
-import actions from './actions'
 import CalcButton from './components/CalcButton'
 import Display from './components/Display'
+import useButtonKeydown from './hooks/useButtonKeydown'
+import { BUTTON } from './constants/button'
 import './styles/index.css'
 
 const AppContainer = styled.div`
@@ -17,58 +17,41 @@ const AppContainer = styled.div`
   padding: 20px;
 `
 
-const getButtonNameByKey = key => {
-  if (key === 'Escape') return 'AC'
-  if (key === '/') return '÷'
-  if (['Enter', '='].includes(key)) return '='
-  if ('x*'.includes(key)) return 'x'
-  if ('+-%.'.includes(key)) return key
-  if (/\d/.test(key)) return key
-}
-
 const App = () => {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    const handleKeyPress = e => {
-      const value = getButtonNameByKey(e.key)
-      if (value) dispatch(actions.calculate(value))
-    }
-    window.addEventListener('keydown', handleKeyPress, true)
-    return window.removeEventListener('keydown', handleKeyPress)
-  }, [])
+  useButtonKeydown()
 
   return (
     <AppContainer>
       <Display />
       <CalcButton.Row>
-        <CalcButton.Functional value="AC" />
-        <CalcButton.Functional value="+/-" />
-        <CalcButton.Functional value="%" />
-        <CalcButton.Operator value="÷" />
+        <CalcButton.Functional value={BUTTON.AC} />
+        <CalcButton.Functional value={BUTTON.NEG} />
+        <CalcButton.Functional value={BUTTON.PERCENT} />
+        <CalcButton.Operation value={BUTTON.DIV} />
       </CalcButton.Row>
       <CalcButton.Row>
         <CalcButton value="7" />
         <CalcButton value="8" />
         <CalcButton value="9" />
-        <CalcButton.Operator value="x" />
+        <CalcButton.Operation value={BUTTON.MUL} />
       </CalcButton.Row>
       <CalcButton.Row>
         <CalcButton value="4" />
         <CalcButton value="5" />
         <CalcButton value="6" />
-        <CalcButton.Operator value="-" />
+        <CalcButton.Operation value={BUTTON.SUB} />
       </CalcButton.Row>
       <CalcButton.Row>
         <CalcButton value="1" />
         <CalcButton value="2" />
         <CalcButton value="3" />
-        <CalcButton.Operator value="+" />
+        <CalcButton.Operation value={BUTTON.ADD} />
       </CalcButton.Row>
       <CalcButton.Row>
         <CalcButton value="0" />
-        <CalcButton value="." />
-        <CalcButton value="." />
-        <CalcButton.Operator value="=" />
+        <CalcButton value={BUTTON.DOT} />
+        <CalcButton value={BUTTON.DOT} />
+        <CalcButton.Operation value={BUTTON.EQ} />
       </CalcButton.Row>
     </AppContainer>
   )

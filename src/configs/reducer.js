@@ -1,5 +1,6 @@
 import { handleActions } from 'redux-actions'
 import actions from '../actions'
+import { BUTTON } from '../constants/button'
 import { div100, isNumber, operate, reverse } from '../utils'
 
 const initialState = {
@@ -10,22 +11,22 @@ const initialState = {
 
 const rootReducer = handleActions(
   {
-    [actions.calculate]: (state, { payload: buttonName }) => {
-      if (buttonName === 'AC') return initialState
-      if (buttonName === '0' && state.next === '0') return { ...state }
+    [actions.calculate]: (state, { payload: button }) => {
+      if (button === BUTTON.AC) return initialState
+      if (button === '0' && state.next === '0') return { ...state }
 
-      if (isNumber(buttonName)) {
+      if (isNumber(button)) {
         let total = state.total
-        let next = buttonName
+        let next = button
         const operation = state.operation
 
-        if (state.next && state.next !== '0') next = state.next + buttonName
+        if (state.next && state.next !== '0') next = state.next + button
         if (!state.operation) total = null
 
         return { total, next, operation }
       }
 
-      if (buttonName === '.') {
+      if (button === BUTTON.DOT) {
         const getNext = () => {
           if (!state.next) return '0.'
           if (state.next.includes('.')) return state.next
@@ -34,7 +35,7 @@ const rootReducer = handleActions(
         return { ...state, next: getNext() }
       }
 
-      if (buttonName === '+/-') {
+      if (button === BUTTON.NEG) {
         let total = state.total
         let next = state.next
         const operation = state.operation
@@ -44,7 +45,7 @@ const rootReducer = handleActions(
         return { total, next, operation }
       }
 
-      if (buttonName === '%') {
+      if (button === BUTTON.PERCENT) {
         if (state.operation && state.next) {
           const result = operate(state.total, state.next, state.operation)
           return {
@@ -65,7 +66,7 @@ const rootReducer = handleActions(
         return { ...state }
       }
 
-      if (buttonName === '=') {
+      if (button === BUTTON.EQ) {
         if (state.next && state.operation) {
           return {
             total: operate(state.total, state.next, state.operation),
@@ -81,16 +82,16 @@ const rootReducer = handleActions(
         return {
           total: operate(state.total, state.next, state.operation),
           next: null,
-          operation: buttonName
+          operation: button
         }
       }
 
-      if (!state.next) return { ...state, operation: buttonName }
+      if (!state.next) return { ...state, operation: button }
 
       return {
         total: state.next,
         next: null,
-        operation: buttonName
+        operation: button
       }
     }
   },
