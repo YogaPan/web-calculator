@@ -5,8 +5,8 @@ export const BUTTON = {
   NEG: '+/-',
   ADD: '+',
   SUB: '-',
-  MUL: 'x',
-  DIV: '/',
+  MUL: '×',
+  DIV: '÷',
   PERCENT: '%'
 }
 
