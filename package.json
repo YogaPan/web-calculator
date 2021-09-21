@@ -13,7 +13,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@galtz-library/browserslist-config": "^0.2.5",
+    "@galtz-library/browserslist-config": "^0.2.6",
     "big.js": "^6.1.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
