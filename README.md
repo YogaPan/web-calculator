@@ -8,7 +8,7 @@
 
 ## 使用技術
 
-1. [React](https://reactjs.org/)：網頁框架，方便重複的 component、hooks 進行開發。
+1. [React](https://reactjs.org/)：網頁框架，方便使用重複的 component、hooks 進行開發。
 2. [Redux](https://redux.js.org/)：用來狀態管理，並且將核心計算邏輯放在 reducer 方便往後進行 unit test。
 3. [Jest](https://jestjs.io/)：針對 reducer 進後核心邏輯的單元測試。
 4. [Workbox](https://developers.google.com/web/tools/workbox)：提供多種 cache strategies 提升效能，並讓 web app 可以 offline 使用。
@@ -20,9 +20,10 @@
 
 1. `npm install`：安裝 dependencies。
 2. `npm start`：在 http://localhost:3000 使用 hot reload 開發。
-3. `npm format && npm lint`：確保程式碼風格符合規範。
-4. `npm run build`：建置 production 專案。
-5. `npm run serve`：透過 http://localhost:7000 檢驗 production build 結果。
+3. `npm format`：使用 [Prettier](https://prettier.io/) 確保程式碼風格符合規範。
+4. `npm run lint`：使用 [ESLint](https://eslint.org/) 確保程式碼風格符合規範。
+5. `npm run build`：建置 production 專案。
+6. `npm run serve`：透過 http://localhost:7000 檢驗 production build 結果。
 
 ### 流程
 
@@ -31,7 +32,7 @@
 3. 修改程式並 commit，commit message 遵守 [Angular Convention](https://github.com/angular/angular/blob/master/CONTRIBUTING.md)，經修改的程式碼會透過 [lint-staged](https://github.com/okonet/lint-staged) + [husky](https://github.com/typicode/husky) 進行 lint、測試。
 4. Push 至 Github，手動發起 pull request。
 5. 自動觸發 Github Actions 的 test job，運行腳本確認程式碼品質、[Deploy Previews](https://docs.netlify.com/site-deploys/deploy-previews/) 正常後，手動 merge 進 master branch。
-6. 自動觸發 [Netlify build & deploy](https://docs.netlify.com/configure-builds/get-started/)。部署至 https://galtz-web-calculator.netlify.app。
+6. 自動觸發 [Netlify build & deploy](https://docs.netlify.com/configure-builds/get-started/) 部署至 https://galtz-web-calculator.netlify.app。
 
 ### Depfu
 
